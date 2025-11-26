@@ -4,6 +4,7 @@
 #include "RS01.h"
 extern osThreadId_t defaultTaskHandle;
 osMessageQueueId_t myQueue = NULL;
+extern "C" {
 void StartDefaultTask(void *argument)
 {
   /* USER CODE BEGIN StartDefaultTask */
@@ -26,4 +27,5 @@ void StartDefaultTask(void *argument)
     osDelay(500);
   }
   /* USER CODE END StartDefaultTask */
+}
 }
