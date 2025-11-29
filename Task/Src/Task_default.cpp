@@ -3,17 +3,13 @@
 #include <stdio.h>
 #include "RS01.h"
 extern osThreadId_t defaultTaskHandle;
-osMessageQueueId_t myQueue = NULL;
 extern "C" {
 void StartDefaultTask(void *argument)
 {
   /* USER CODE BEGIN StartDefaultTask */
    taskENTER_CRITICAL();
-  myQueue = osMessageQueueNew(16, sizeof(cha_Speed), NULL);
-  
-  if (myQueue == NULL) {
-        // printf("Failed to create message queue.\n");
-    }
+
+
 
   RobStride_Motor RobStride_01(0x7F, false);
 

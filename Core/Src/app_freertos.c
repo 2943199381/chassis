@@ -26,6 +26,10 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
+#include "Task_command.h"
+#include "Task_default.h"
+#include "Task_cha_control.h"
+#include "chassis_driver.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -74,6 +78,16 @@ const osThreadAttr_t Dji_ctrl_Task_attributes = {
   .name = "Dji_ctrl_Task",
   .priority = (osPriority_t) osPriorityAboveNormal,
   .stack_size = 256 * 4
+};
+/* Definitions for remote_queue */
+osMessageQueueId_t remote_queueHandle;
+const osMessageQueueAttr_t remote_queue_attributes = {
+  .name = "remote_queue"
+};
+/* Definitions for cha_speedqueue */
+osMessageQueueId_t cha_speedqueueHandle;
+const osMessageQueueAttr_t cha_speedqueue_attributes = {
+  .name = "cha_speedqueue"
 };
 
 /* Private function prototypes -----------------------------------------------*/
@@ -137,8 +151,16 @@ void MX_FREERTOS_Init(void) {
   /* start timers, add new ones, ... */
   /* USER CODE END RTOS_TIMERS */
 
+  /* Create the queue(s) */
+  /* creation of remote_queue */
+  remote_queueHandle = osMessageQueueNew (16, sizeof(UartRxMessage_t), &remote_queue_attributes);
+
+  /* creation of cha_speedqueue */
+  cha_speedqueueHandle = osMessageQueueNew (16, sizeof(cha_Speed), &cha_speedqueue_attributes);
+
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
+
   /* USER CODE END RTOS_QUEUES */
 
   /* Create the thread(s) */

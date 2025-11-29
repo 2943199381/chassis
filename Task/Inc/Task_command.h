@@ -7,7 +7,18 @@
 
 #include "main.h"
 #include <string.h>
-extern uint8_t readBuffer[10];
+
+#include "cmsis_os2.h"
+#define COMMAND_LENGTH 10// 指令长度
+extern uint8_t remote_Buffer[10];
+extern osMessageQueueId_t remote_queueHandle;
+extern osMessageQueueId_t cha_speedqueueHandle;
+/* Structs -------------------------------------------------------------------*/
+// 用于在中断和任务之间安全传递数据的结构体
+typedef struct {
+    uint8_t data[COMMAND_LENGTH];
+    uint16_t size;
+} UartRxMessage_t;
 
 uint8_t Command_Write(uint8_t *data, uint8_t length);
 

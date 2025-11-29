@@ -4,10 +4,10 @@
 
 #ifndef R1_CHASSIS_CHASSIS_DRIVER_H
 #define R1_CHASSIS_CHASSIS_DRIVER_H
-
+#include "stdint.h"
 // --- 1. 底盘类型宏定义 ---
- #define CHASSIS_TYPE_DUOLUN
- //#define CHASSIS_TYPE_QUANXIANGLUN
+//  #define CHASSIS_TYPE_DUOLUN
+ #define CHASSIS_TYPE_QUANXIANGLUN
 
 // 注意:以下这些值目前纯数瞎给，需要根据实际底盘参数进行调整
 #define WHEEL_NUM       4
@@ -24,6 +24,13 @@ typedef struct {
     float target_angle;  // 舵轮期望转向角 (仅舵轮需要)
 #endif
 } Wheel_Command_t;
+
+typedef struct {
+    uint8_t id;
+    float vx;
+    float vy;
+    float w;
+} cha_Speed;
 
 void cha_remote(float vx, float vy, float vr);
 

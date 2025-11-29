@@ -109,8 +109,8 @@ int main(void)
   MX_USART3_UART_Init();
   MX_LPUART1_UART_Init();
   /* USER CODE BEGIN 2 */
-  // printf("HELLO W");
-  HAL_UARTEx_ReceiveToIdle_DMA(&huart4,readBuffer,sizeof(readBuffer));
+  // printf("HELLO W"); 
+  
   Pid_parameter_init();
   
   /* USER CODE END 2 */

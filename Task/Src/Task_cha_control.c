@@ -3,6 +3,7 @@
 #include "Task_default.h"
 #include "cmsis_os.h"
 #include "chassis_driver.h"
+#include "Task_cha_control.h"
 void StartTask_cha_control(void *argument)
 {
   /* USER CODE BEGIN StartTask_cha_control */
@@ -10,12 +11,12 @@ void StartTask_cha_control(void *argument)
   /* Infinite loop */
   for(;;)
   {
-     if (myQueue != NULL) {
-            if (osMessageQueueGet(myQueue, &received, NULL, osWaitForever) == osOK) {
-                cha_remote(received.vx, received.vy, received.w);
+     
+    osMessageQueueGet(cha_speedqueueHandle, &received, NULL, 0);
+    cha_remote(received.vx, received.vy, received.w);
                 // 成功接收，处理 rx
-            }
-        }
+        
+        
     
     osDelay(10);
   }
