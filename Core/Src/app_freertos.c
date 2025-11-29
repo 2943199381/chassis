@@ -72,7 +72,7 @@ const osThreadAttr_t cha_control_attributes = {
 osThreadId_t Dji_ctrl_TaskHandle;
 const osThreadAttr_t Dji_ctrl_Task_attributes = {
   .name = "Dji_ctrl_Task",
-  .priority = (osPriority_t) osPriorityNormal,
+  .priority = (osPriority_t) osPriorityAboveNormal,
   .stack_size = 256 * 4
 };
 
