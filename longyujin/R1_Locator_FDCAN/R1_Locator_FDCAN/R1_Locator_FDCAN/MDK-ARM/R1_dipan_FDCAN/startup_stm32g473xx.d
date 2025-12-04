@@ -1,0 +1,1 @@
+r1_dipan_fdcan\startup_stm32g473xx.o: startup_stm32g473xx.s
