@@ -3,7 +3,7 @@
 <title>Static Call Graph - [fdcan_test\fdcan_test.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image fdcan_test\fdcan_test.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6190004: Last Updated: Sat Nov 29 11:24:58 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6190004: Last Updated: Sat Dec  6 21:22:18 2025
 <BR><P>
 <H3>Maximum Stack Usage =        332 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1209,7 +1209,7 @@ Global Symbols
 <P><STRONG><a name="[6]"></a>SVC_Handler</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, port.o(.text.SVC_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32g474xx.o(RESET)
 </UL>
-<P><STRONG><a name="[73]"></a>StartDefaultTask</STRONG> (Thumb, 72 bytes, Stack size 0 bytes, app_freertos.o(.text.StartDefaultTask))
+<P><STRONG><a name="[73]"></a>StartDefaultTask</STRONG> (Thumb, 92 bytes, Stack size 0 bytes, app_freertos.o(.text.StartDefaultTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 332<LI>Call Chain = StartDefaultTask &rArr; Motor_InitZeroing &rArr; motor_control &rArr; sendCANControlMotor &rArr; HAL_FDCAN_GetRxMessage
 </UL>
 <BR>[Calls]<UL><LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Motor_MoveTo

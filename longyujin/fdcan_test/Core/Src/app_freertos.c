@@ -86,7 +86,7 @@ void StartDefaultTask(void *argument)
     // 初始化并校准零点 (使用 ID 1)
     Motor_InitZeroing(1);
 
-    float target1 = 6.33f * M_PI; 
+    float target1 = 0.0f; 
     float target2 = 0.0f;          
     int flag = 0;
 
@@ -95,15 +95,19 @@ void StartDefaultTask(void *argument)
   {
       if (!Motor_IsMoving())
       {
-          float next_target = (flag == 0) ? target1 : target2;
-          
+		  flag++;
+		  if(flag>=2)
+		  {
+		  float next_target = target1 + 6.33f * M_PI*2;
+           target1 = next_target;
           // 发送指令：目标位置, 最大速度 24, 加速度 24
-          Motor_MoveTo(next_target, 24.0f, 24.0f);
+          Motor_MoveTo(next_target, 400.0f, 430.0f);
+		  }
           
-          flag = 1 - flag; 
+          
       }
 
-      osDelay(2000); 
+      osDelay(8000); 
   }
   /* USER CODE END StartDefaultTask */
 }
