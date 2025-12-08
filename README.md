@@ -1,13 +1,8 @@
-# R1_chassis
-
+# Volleyball_code
 #### 介绍
 2026年xjrc电控组R1底盘代码
-
 #### 软件架构
 软件架构说明
-
-
-### cyx 骑着 虚b 加入 mhr 仓库
 ### 收到
 
 
