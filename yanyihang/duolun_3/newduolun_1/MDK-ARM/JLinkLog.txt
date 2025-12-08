@@ -1,0 +1,70 @@
+T289C 000:004.206   SEGGER J-Link V7.82 Log File
+T289C 000:004.292   DLL Compiled: Oct 13 2022 13:32:51
+T289C 000:004.309   Logging started @ 2025-12-08 11:08
+T289C 000:004.322 - 4.328ms
+T289C 000:004.338 JLINK_SetWarnOutHandler(...)
+T289C 000:004.353 - 0.020ms
+T289C 000:004.367 JLINK_OpenEx(...)
+T289C 000:006.014   Firmware: J-Link ARM-OB STM32 compiled Aug 22 2012 19:52:04
+T289C 000:006.416   Firmware: J-Link ARM-OB STM32 compiled Aug 22 2012 19:52:04
+T289C 000:008.576   Hardware: V7.00
+T289C 000:008.602   S/N: 20090928
+T289C 000:008.619   OEM: SEGGER
+T289C 000:008.636   Feature(s): JFlash, RDI, GDB, FlashDL, FlashBP
+T289C 000:009.591   TELNET listener socket opened on port 19021
+T289C 000:009.657   WEBSRV WEBSRV_Init(): Starting webserver thread(s)
+T289C 000:009.827   WEBSRV Webserver running on local port 19080
+T289C 000:019.612 - 15.287ms returns "O.K."
+T289C 000:019.671 JLINK_GetEmuCaps()
+T289C 000:019.683 - 0.017ms returns 0x88EA5833
+T289C 000:019.698 JLINK_TIF_GetAvailable(...)
+T289C 000:020.117 - 0.479ms
+T289C 000:020.189 JLINK_SetErrorOutHandler(...)
+T289C 000:020.201 - 0.018ms
+T289C 000:020.223 JLINK_ExecCommand("ProjectFile = "D:\robocon\robocon\duolun_3\newduolun_1\MDK-ARM\JLinkSettings.ini"", ...). 
+T289C 000:028.319 - 8.105ms returns 0x00
+T289C 000:030.300 JLINK_ExecCommand("Device = STM32G473CBTx", ...). 
+T289C 000:031.779   Device "STM32G473CB" selected.
+T289C 000:032.131 - 1.817ms returns 0x00
+T289C 000:032.148 JLINK_ExecCommand("DisableConnectionTimeout", ...). 
+T289C 000:032.162 - 0.006ms returns 0x01
+T289C 000:032.175 JLINK_GetHardwareVersion()
+T289C 000:032.186 - 0.016ms returns 70000
+T289C 000:032.200 JLINK_GetDLLVersion()
+T289C 000:032.211 - 0.016ms returns 78200
+T289C 000:032.224 JLINK_GetOEMString(...)
+T289C 000:032.235 JLINK_GetFirmwareString(...)
+T289C 000:032.246 - 0.016ms
+T289C 000:036.317 JLINK_GetDLLVersion()
+T289C 000:036.340 - 0.029ms returns 78200
+T289C 000:036.354 JLINK_GetCompileDateTime()
+T289C 000:036.366 - 0.018ms
+T289C 000:037.387 JLINK_GetFirmwareString(...)
+T289C 000:037.407 - 0.026ms
+T289C 000:038.387 JLINK_GetHardwareVersion()
+T289C 000:038.406 - 0.024ms returns 70000
+T289C 000:039.424 JLINK_GetSN()
+T289C 000:039.445 - 0.026ms returns 20090928
+T289C 000:040.499 JLINK_GetOEMString(...)
+T289C 000:042.610 JLINK_TIF_Select(JLINKARM_TIF_SWD)
+T289C 000:043.008 - 0.406ms returns 0x00
+T289C 000:043.024 JLINK_HasError()
+T289C 000:043.043 JLINK_SetSpeed(5000)
+T289C 000:043.159 - 0.123ms
+T289C 000:043.174 JLINK_GetId()
+T289C 000:044.391   InitTarget() start
+T289C 000:044.420    J-Link Script File: Executing InitTarget()
+T289C 000:549.534   Can not attach to CPU. Trying connect under reset.
+T289C 001:106.751   Connecting to CPU via connect under reset failed.
+T289C 001:161.174   InitTarget() end
+T289C 001:162.674   Connect failed. Resetting via Reset pin and trying again.
+T289C 001:229.508   InitTarget() start
+T289C 001:229.619    J-Link Script File: Executing InitTarget()
+T289C 001:736.738   Can not attach to CPU. Trying connect under reset.
+T289C 002:292.798   Connecting to CPU via connect under reset failed.
+T289C 002:350.989   InitTarget() end
+T289C 002:351.034 - 2307.865ms returns 0x00000000
+T289C 004:726.028 JLINK_Close()
+T289C 004:741.056 - 15.063ms
+T289C 004:741.099   
+T289C 004:741.112   Closed
