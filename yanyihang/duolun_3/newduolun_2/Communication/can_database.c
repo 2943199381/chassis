@@ -135,12 +135,10 @@ void HAL_FDCAN_RxFifo1Callback(FDCAN_HandleTypeDef *hfdcan,uint32_t RxFifo1ITs)
     HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO1, &rx_header, rx_data);
 		if(rx_header.Identifier==0x13)
 		{
-			//printf("good");
-			ReceiveVel = (rx_data[16] << 24) | (rx_data[17] << 16) | (rx_data[18] << 8) | rx_data[19];
+			ReceiveVel = (rx_data[0] << 24) | (rx_data[1] << 16) | (rx_data[2] << 8) | rx_data[3];
 			vel= *((float*)&ReceiveVel);//指针强制转化为float类型
-			ReceiveAngle = (rx_data[20] << 24) | (rx_data[21] << 16) | (rx_data[22] << 8) | rx_data[23];
+			ReceiveAngle = (rx_data[4] << 24) | (rx_data[5] << 16) | (rx_data[6] << 8) | rx_data[7];
 			target_angle_pos= *((float*)&ReceiveAngle);
-			printf("%f",vel);
 		}
 	}
 }
