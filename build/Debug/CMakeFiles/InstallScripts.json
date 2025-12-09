@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/lhx/stm32sw/vollyball/build/Debug/cmake_install.cmake",
+		"/home/lhx/stm32sw/vollyball/build/Debug/cmake/stm32cubemx/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
