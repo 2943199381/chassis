@@ -40,6 +40,8 @@ uint8_t FDCAN1_Transmit(uint8_t *TxData, uint32_t id, uint32_t len, uint8_t EXTf
 uint8_t FDCAN2_Transmit(uint8_t *TxData, uint32_t id, uint32_t len, uint8_t EXTflag);
 uint8_t FDCAN3_Transmit(uint8_t *TxData, uint32_t id, uint32_t len, uint8_t EXTflag);
 
+void Chassis_Send_Swerve_Command(uint8_t id,uint32_t speed,uint32_t angle);
+
 void Hash_table_init(void);
 
 void send_message(uint32_t id,uint8_t data);
