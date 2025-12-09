@@ -375,16 +375,16 @@ void send_message(uint32_t id,uint8_t data)
 
 void Chassis_Send_Swerve_Command(uint8_t id,uint32_t speed,uint32_t angle)
 {
-	uint8_t TxMessage[24];
+	uint8_t TxMessage[8];
 	id += 0x20;
-	TxMessage[8]  = (speed >> 24) & 0xFF;  // 提取24~31位
-	TxMessage[9]  = (speed >> 16) & 0xFF;  // 提取16~23位
-	TxMessage[10] = (speed >> 8)  & 0xFF;  // 提取8~15位
-	TxMessage[11] = speed & 0xFF;
-	TxMessage[12]  = (angle >> 24) & 0xFF;  // 提取24~31位
-	TxMessage[13]  = (angle >> 16) & 0xFF;  // 提取16~23位
-	TxMessage[14] = (angle >> 8)  & 0xFF;  // 提取8~15位
-	TxMessage[15] = angle & 0xFF;
+	TxMessage[0]  = (speed >> 24) & 0xFF;  // 提取24~31位
+	TxMessage[1]  = (speed >> 16) & 0xFF;  // 提取16~23位
+	TxMessage[2] = (speed >> 8)  & 0xFF;  // 提取8~15位
+	TxMessage[3] = speed & 0xFF;
+	TxMessage[4]  = (angle >> 24) & 0xFF;  // 提取24~31位
+	TxMessage[5]  = (angle >> 16) & 0xFF;  // 提取16~23位
+	TxMessage[6] = (angle >> 8)  & 0xFF;  // 提取8~15位
+	TxMessage[7] = angle & 0xFF;
 	FDCAN3_Transmit(TxMessage, id, 24, 1);
 }
 #endif
