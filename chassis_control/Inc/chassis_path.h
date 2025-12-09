@@ -105,6 +105,10 @@ typedef struct {
     float down_stage;   ///< 曲线减速阶段对应的路径长度
 } path_spd_data_t;
 
+/* 函数声明：在实现文件中定义，供其他模块调用 */
+float get_length(Point_struct a, Point_struct b);
+vec2 change_world_to_local(vec2 src, float angle);
+
 
 
 #endif //R1_CHASSIS_CHASSIS_PATH_H

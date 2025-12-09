@@ -5,19 +5,27 @@
 
 typedef struct Distri_Speed
 {
-	double up_stage;       //¼ÓËÙ½×¶Î
-	double down_stage;     //¼õËÙ½×¶Î
-	double maxspd;        //×î´óËÙ¶È£¬Ò²ÊÇËÙ¶ÈÏŞÖÆ
+	double up_stage;       //ï¿½ï¿½ï¿½Ù½×¶ï¿½
+	double down_stage;     //ï¿½ï¿½ï¿½Ù½×¶ï¿½
+	double maxspd;        //ï¿½ï¿½ï¿½ï¿½Ù¶È£ï¿½Ò²ï¿½ï¿½ï¿½Ù¶ï¿½ï¿½ï¿½ï¿½ï¿½
     double addspd;
-	double stopspd;         //Í£Ö¹Ç°×îµÍËÙ
+	double stopspd;         //Í£Ö¹Ç°ï¿½ï¿½ï¿½ï¿½ï¿½
+    double accel;          // ç”¨æˆ·å¯é…ç½®çš„åŠ é€Ÿåº¦ (units consistent with speed and distance)
+    double decel;          // ç”¨æˆ·å¯é…ç½®çš„å‡é€Ÿåº¦
 }Dis_spd;
 
+typedef struct 
+{
+	float x;
+	float y;
+}Point;
 
-extern float sumerr_ang_spd;
-extern vec2 sum_err_spd;
-extern vec2 sum_err_spd_kj;
-extern int flag_if_route_finish_g;
-extern int flag_if_change_target_g;
+
+// extern float sumerr_ang_spd;
+// extern vec2 sum_err_spd;
+// extern vec2 sum_err_spd_kj;
+// extern int flag_if_route_finish_g;
+// extern int flag_if_change_target_g;
 
 vec2 getSpd_Route2Point(Point start_point,Point target_point,Dis_spd dis_spd);
 double getAng_Route2Point(float path_pos, float length,float start_ang, float end_ang);
