@@ -37,3 +37,7 @@ CMakeCache.txt
 # 调试产生的跟踪文件
 *.swo
 *.swp
+
+# CodeQL 分析文件
+_codeql_build_dir/
+_codeql_detected_source_root
