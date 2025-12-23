@@ -108,11 +108,8 @@ void HFSM_Transition(HFSM_StateMachine_t* me, HFSM_State_t* target_state) {
     
     // 如果是首次初始化（当前状态为空）
     if (me->current_state == NULL) {
-        me->current_state = target_state;
-        // 触发ENTRY事件
-        if (target_state->handler != NULL) {
-            target_state->handler(me, HFSM_EVENT_ENTRY);
-        }
+        // 从顶层开始依次进入到目标状态
+        EnterFromState(me, target_state);
         return;
     }
     
@@ -231,11 +228,11 @@ static void ExitToState(HFSM_StateMachine_t* me, HFSM_State_t* target) {
 }
 
 /*
-1.函数功能：从某状态进入到目标状态
+1.函数功能：从当前状态（或LCA）进入到目标状态
 2.入参：状态机指针，目标状态指针
 3.返回值：none
 4.用法及调用要求：内部函数，在状态转换时调用
-5.其它：从当前状态开始，沿着父状态链找到目标状态的路径，然后逐层进入
+5.其它：从当前状态（或最近公共祖先）开始，沿着父状态链找到目标状态的路径，然后逐层进入
 */
 static void EnterFromState(HFSM_StateMachine_t* me, HFSM_State_t* target) {
     if (me == NULL || target == NULL) {
