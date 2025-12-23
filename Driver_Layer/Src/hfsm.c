@@ -243,13 +243,20 @@ static void EnterFromState(HFSM_StateMachine_t* me, HFSM_State_t* target) {
     }
     
     // 构建从LCA到target的路径
-    HFSM_State_t* path[16];  // 最多支持16层嵌套
+    HFSM_State_t* path[HFSM_MAX_DEPTH];
     int depth = 0;
     
     HFSM_State_t* state = target;
-    while (state != NULL && state != me->current_state && depth < 16) {
+    while (state != NULL && state != me->current_state && depth < HFSM_MAX_DEPTH) {
         path[depth++] = state;
         state = state->parent;
+    }
+    
+    // 检查是否超出最大深度
+    if (depth >= HFSM_MAX_DEPTH && state != NULL && state != me->current_state) {
+        // 超出最大嵌套深度，状态转换可能不完整
+        // 在实际应用中可以添加错误日志或断言
+        return;
     }
     
     // 从父状态到子状态依次进入

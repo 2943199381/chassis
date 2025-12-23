@@ -9,6 +9,11 @@
 #include <stddef.h>
 
 /**
+ * @brief 最大状态嵌套深度
+ */
+#define HFSM_MAX_DEPTH 16
+
+/**
  * @brief 状态机事件类型定义
  */
 typedef uint16_t HFSM_Event_t;
