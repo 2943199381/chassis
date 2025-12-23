@@ -38,6 +38,7 @@ add_executable(${CMAKE_PROJECT_NAME}
         chassis_control/Src/path.c
         chassis_control/Src/chassis_pid.c
         Driver_Layer/Src/locator_driver.c
+        Driver_Layer/Src/hfsm.c
         chassis_control/Src/chassis_driver.c
         Driver_remote/Src/remote_driver.c
         Driver_Motor/Src/dji_3508_2006_motor.c
